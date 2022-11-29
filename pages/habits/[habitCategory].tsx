@@ -1,5 +1,6 @@
 import { useRouter } from "next/router"
 import HabitContainer from "../../components/HabitContainer"
+import MenuButton from "../../components/MenuButton"
 import useHabits from "../../data/useHabits.hook"
 
 export default function Page() {
@@ -14,6 +15,9 @@ export default function Page() {
 
     if (!(habitCategory as string in habits!)) return <h2>Error: not a valid habit category</h2>
 
-    return <HabitContainer habits={habits![habitCategory as string]} habitCategory={habitCategory as string} />
+    return <div style={{ position: "relative" }}>
+        <MenuButton />
+        <HabitContainer habits={habits![habitCategory as string]} habitCategory={habitCategory as string} />
+    </div>
 
 }
