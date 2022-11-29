@@ -1,0 +1,19 @@
+.habitCard {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 100vh;
+
+    scroll-snap-align: start;
+
+    position: relative;
+
+    border: 1px solid transparent;
+}
+
+.habitCard h2 {
+
+    color: white;
+}

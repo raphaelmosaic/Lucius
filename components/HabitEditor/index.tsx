@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react"
+import { MultiSelect } from "react-multi-select-component"
 import useHabits from "../../data/useHabits.hook"
 import style from "./habitEditor.module.css"
 
@@ -29,13 +30,19 @@ export default function HabitEditor({ }: HabitEditorProps) {
 
         setHabitCategory(newHabitCategory)
 
+        setSelected([{ label: newHabitCategory, value: newHabitCategory }])
+
     }, [habits])
 
     useEffect(() => {
 
-        if (habits == null || habitCategory == null || !(habitCategory in habits) || textArea.current == null) return
+        if (habits == null || habitCategory == null || textArea.current == null) return
 
-        const newContent = markdownHabits[habitCategory]
+        const isNewCategory = !(habitCategory in habits)
+
+        const newContent = isNewCategory ? "" : markdownHabits[habitCategory]
+
+        if (isNewCategory) submitHabits()
 
         textArea.current.value = newContent
 
@@ -45,16 +52,49 @@ export default function HabitEditor({ }: HabitEditorProps) {
 
     const textArea = useRef<HTMLTextAreaElement>(null)
 
-    if (isLoading) return <h2>loading...</h2>
+    const [selected, setSelected] = useState<{ label: string, value: string }[]>([]);
+
+    if (isLoading) return null
+
+    function setSelectedDings(e: { label: string, value: string }[]) {
+
+        setSelected(prev => {
+
+            const dinger = e.filter(i => !prev.includes(i))
+
+            if (dinger.length === 0) return prev
+
+            setHabitCategory((dinger[0] ?? e).label)
+
+            return dinger
+        })
+    }
+
+    const options = Object.keys(habits!).map(i => ({ label: i, value: i }))
 
     return <div className={style["habitEditor"]}>
 
-        <select
+        {/* <select
             onChange={e => setHabitCategory(e.target.value)}
             className={style["habitCategoryField"]}
         >
             {Object.keys(habits!).map((i, idx) => <option value={i} key={idx}>{i}</option>)}
-        </select>
+        </select> */}
+
+        <MultiSelect
+            className={style["dings"]}
+            options={options}
+            value={selected}
+            onChange={setSelectedDings}
+            labelledBy="Select"
+            isCreatable={true}
+            hasSelectAll={false}
+            closeOnChangedValue={true}
+            ItemRenderer={({ checked, option, onClick }: any) =>
+
+                <div onClick={onClick}>{option.label}</div>
+            }
+        />
 
         <textarea
             ref={textArea}

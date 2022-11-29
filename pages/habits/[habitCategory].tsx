@@ -10,7 +10,7 @@ export default function Page() {
 
     const { isLoading, habits } = useHabits()
 
-    if (isLoading) return <h2>loading...</h2>
+    if (isLoading) return null
 
     if (!(habitCategory as string in habits!)) return <h2>Error: not a valid habit category</h2>
 

@@ -3,7 +3,6 @@ import { join } from "path"
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 import nc from 'next-connect';
-import path from "path";
 
 const HABITS_PATH = join(__dirname, "../../../../public/habits.json")
 

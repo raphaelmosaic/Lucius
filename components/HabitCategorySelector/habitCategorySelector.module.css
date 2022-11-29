@@ -1,13 +1,21 @@
 .habitCategorySelector {
 
+    padding-top: 2rem;
+
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-around;
 
+    flex-wrap: wrap;
+
     scroll-snap-align: start;
 
-    width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
+
+    margin: auto;
+
+    gap: 1rem;
 }
 
 .card {
@@ -31,4 +39,18 @@
 
 .card:hover {
     background: #303030;
+}
+
+@media only screen and (max-width: 800px) {
+
+    .habitCategorySelector a,
+    .card {
+        width: calc(100% - 2rem);
+        height: 10rem;
+        margin: auto;
+    }
+
+    .habitCategorySelector {
+        flex-direction: column;
+    }
 }

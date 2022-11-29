@@ -1,5 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 
+import style from "./habitCard.module.css"
+
 import useIsInViewport from "../../utils/useIsInViewport";
 
 export interface HabitCardProps {
@@ -11,10 +13,8 @@ const HabitCard = ({ habit, habitCategory }: HabitCardProps) => {
 
     const card = useRef<HTMLDivElement>(null)
 
-    const isInViewport = useIsInViewport(card);
-
     return (
-        <div className="slider-children" ref={card}>
+        <div className={style.habitCard} ref={card}>
             <h2>{habit}</h2>
         </div>
     );

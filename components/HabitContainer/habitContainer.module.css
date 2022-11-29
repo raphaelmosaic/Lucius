@@ -1,4 +1,4 @@
-.slider-container {
+.habitContainer {
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
@@ -7,23 +7,21 @@
     position: relative;
 }
 
-.slider-container div {
+.menuButton {
 
+    position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
 
-    width: 100vw;
-    height: 100vh;
-
-    scroll-snap-align: start;
-
-    position: relative;
-
-    border: 1px solid transparent;
-}
-
-.slider-container div h2 {
+    width: 12rem;
+    height: 8rem;
 
     color: white;
+
+    z-index: 999;
+}
+
+.menuButton:hover {
+    text-decoration: underline;
 }
