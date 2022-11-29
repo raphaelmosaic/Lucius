@@ -17,8 +17,8 @@ export default function HabitOverview() {
         scrollBehavior: "smooth",
     }}>
         <HabitCategorySelector habits={habits!} />
-        <Layout>
+        {/* <Layout>
             <HabitEditor />
-        </Layout>
+        </Layout> */}
     </div >
 }
