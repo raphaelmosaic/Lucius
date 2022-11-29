@@ -1,0 +1,32 @@
+.habitCategorySelector {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 10rem;
+    height: 16rem;
+
+    cursor: pointer;
+
+    border-radius: 5px;
+
+    transition-duration: 0.3s;
+
+    background: #202020;
+
+    color: white;
+}
+
+.card:hover {
+    background: #303030;
+}
