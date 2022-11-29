@@ -11,9 +11,10 @@ export default function HabitContainer({ habits, habitCategory }: HabitContainer
 
     return <div className={style["slider-container"]}>
 
-        {Object.entries(habits).map(([habitCategory, habit]) => <HabitCard
+        {Object.entries(habits).map(([habitCategory, habit], idx) => <HabitCard
             habitCategory={habitCategory}
             habit={habit}
+            key={idx}
         />)}
 
     </div>

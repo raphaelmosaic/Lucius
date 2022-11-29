@@ -9,9 +9,9 @@ export default function HabitCategorySelector({ habits }: HabitCategorySelectorP
 
     return <div className={style["habitCategorySelector"]}>
 
-        {Object.entries(habits).map(([habitCategory, habits]) => {
+        {Object.entries(habits).map(([habitCategory, habits], idx) => {
 
-            return <Link href={`/habits/${habitCategory}`}>
+            return <Link href={`/habits/${habitCategory}`} key={idx}>
                 <div className={style["card"]}>
                     {habitCategory}
                 </div>

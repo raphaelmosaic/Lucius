@@ -8,19 +8,22 @@ const options = [
 ];
 
 const Example = () => {
-    const [selected, setSelected] = useState([]);
+    const [selected, setSelected] = useState<{ label: string, value: string }[]>([]);
+
+    function setSelectedDings(e: { label: string, value: string }[]) {
+
+        setSelected(prev => e.filter(i => !prev.includes(i)))
+    }
 
     return (
         <div>
-            <h1>Select Fruits</h1>
-            <pre>{JSON.stringify(selected)}</pre>
             <MultiSelect
+                // className={ }
                 options={options}
                 value={selected}
-                onChange={setSelected}
+                onChange={setSelectedDings}
                 labelledBy="Select"
                 isCreatable={true}
-                onCreateOption={(e: any) => console.log(e)}
                 hasSelectAll={false}
                 closeOnChangedValue={true}
                 ItemRenderer={({ checked, option, onClick }: any) =>

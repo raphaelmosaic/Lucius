@@ -53,7 +53,7 @@ export default function HabitEditor({ }: HabitEditorProps) {
             onChange={e => setHabitCategory(e.target.value)}
             className={style["habitCategoryField"]}
         >
-            {Object.keys(habits!).map(i => <option value={i}>{i}</option>)}
+            {Object.keys(habits!).map((i, idx) => <option value={i} key={idx}>{i}</option>)}
         </select>
 
         <textarea
