@@ -1,0 +1,105 @@
+.habitEditor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    scroll-snap-align: start;
+
+    position: relative;
+
+    gap: 1rem;
+
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.habitCategoryField:hover,
+.habitContentField:hover {
+    background: #303030;
+}
+
+.habitCategoryField {
+
+    cursor: pointer;
+
+    height: 3rem;
+
+    padding: 0 2rem;
+
+    background: #202020;
+
+    color: white;
+
+    outline: none !important;
+
+    border: none;
+
+    border-radius: 5px;
+
+    width: 33%;
+
+    transition-duration: 0.1s;
+}
+
+.habitContentField {
+
+    height: 66vh;
+
+    font-size: 1rem;
+
+    background: #202020;
+
+    border: none;
+
+    color: white;
+
+    outline: none !important;
+
+    border-radius: 5px;
+
+    font-family: Arial;
+
+    width: 33%;
+
+    padding: 2rem;
+
+    transition-duration: 0.1s;
+}
+
+.habitUpdateButton {
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 3rem;
+
+    padding: 0 1rem;
+
+    border: none;
+
+    background: #33A06F;
+
+    border-radius: 5px;
+
+    color: white;
+
+    transition-duration: 0.1s;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    width: 33%;
+}
+
+.habitUpdateButton:active {
+    transform: scale(0.98);
+}
+
+.habitUpdateButton:hover {
+
+    filter: brightness(0.8);
+}

@@ -3,6 +3,8 @@
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+
+    position: relative;
 }
 
 .slider-container div {
