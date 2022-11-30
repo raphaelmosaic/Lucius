@@ -68,42 +68,6 @@
     transition-duration: 0.1s;
 }
 
-.habitUpdateButton {
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    height: 3rem;
-
-    padding: 0 1rem;
-
-    border: none;
-
-    background: #33A06F;
-
-    border-radius: 5px;
-
-    color: white;
-
-    transition-duration: 0.1s;
-
-    font-size: 1rem;
-
-    cursor: pointer;
-
-    width: 100%;
-}
-
-.habitUpdateButton:active {
-    transform: scale(0.98);
-}
-
-.habitUpdateButton:hover {
-
-    filter: brightness(0.8);
-}
-
 .dings {
 
     width: 100%;
