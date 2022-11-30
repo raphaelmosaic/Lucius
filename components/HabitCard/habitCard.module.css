@@ -1,21 +1,18 @@
 .habitCard {
-
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Inter', sans-serif;
-    font-weight: lighter;
     height: 100vh;
-    font-size: large;
     scroll-snap-align: start;
-
     position: relative;
-
     text-align: center;
-
     border: 1px solid transparent;
 }
 
 .habitCard h2 {
     color: white;
+    font-weight: 200;
+    font-size: 3.5rem;
+    text-align: left;
+    margin: 18px;
 }

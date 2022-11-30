@@ -101,12 +101,5 @@ export default function HabitEditor({ }: HabitEditorProps) {
             placeholder="Habits" className={style["habitContentField"]}
             onChange={e => setHabitContent(e.target.value)}
         />
-
-        <button
-            onClick={submitHabits}
-            className={style["habitUpdateButton"]}
-        >
-            Update
-        </button>
     </div>
 }
