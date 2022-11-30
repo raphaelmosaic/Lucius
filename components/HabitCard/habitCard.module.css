@@ -3,10 +3,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Inter', sans-serif;
+    font-weight: lighter;
     height: 100vh;
     font-size: large;
-    width: 85%;
     scroll-snap-align: start;
 
     position: relative;
