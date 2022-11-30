@@ -12,7 +12,7 @@ export default function HabitOverview() {
     return <div style={{
         height: "100vh",
         overflowY: "scroll",
-        scrollSnapType: "y mandatory",
+        // scrollSnapType: "y mandatory",
         scrollBehavior: "smooth",
     }}>
         <HabitCategorySelector habits={habits!} />

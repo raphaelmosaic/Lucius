@@ -9,7 +9,7 @@
 
     flex-wrap: wrap;
 
-    scroll-snap-align: start;
+    /* scroll-snap-align: start; */
 
     min-height: 100vh;
 
