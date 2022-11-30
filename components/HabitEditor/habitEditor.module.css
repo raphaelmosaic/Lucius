@@ -45,13 +45,13 @@
 
 .habitContentField {
 
-    width: 100%;
+    width: 85%;
 
     height: 66vh;
 
-    font-size: 1rem;
+    font-size: 2rem;
 
-    background: #202020;
+    background: #000000;
 
     border: none;
 
@@ -61,7 +61,7 @@
 
     border-radius: 5px;
 
-    font-family: Arial;
+    font-family: Roboto;
 
     padding: 2rem;
 
