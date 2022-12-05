@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { MultiSelect } from "react-multi-select-component"
+import { getEditableJsonFromJson } from "../../data/markdownJsonParsing"
 import useHabits from "../../data/useHabits.hook"
 import style from "./habitEditor.module.css"
 
@@ -12,7 +13,7 @@ export default function HabitEditor({ }: HabitEditorProps) {
 
     const [habitContent, setHabitContent] = useState<string>("")
 
-    const markdownHabits = Object.fromEntries(Object.entries(habits!).map(([key, value]) => [key, "- " + value.join("\n- ")]))
+    const markdownHabits = getEditableJsonFromJson(habits!)
 
     function submitHabits() {
 
