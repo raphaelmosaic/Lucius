@@ -11,6 +11,10 @@ handler.get(async (req: NextApiRequest, res: NextApiResponse<Record<string, stri
 
     res.status(200).json(habits)
 })
+handler.put(async (req: NextApiRequest, res: NextApiResponse) => {
+
+    res.status(501)
+})
 
 async function getHabitsJson() {
 
@@ -32,3 +36,4 @@ async function getHabitsJson() {
 
     return habits
 }
+export default handler

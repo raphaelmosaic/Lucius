@@ -5,11 +5,17 @@ type Habits = Record<string, string[]>
 
 async function fetchHabits() {
 
-    const res = await fetch("/api/habits")
+    try {
 
-    const data: Habits = await res.json()
+        const res = await fetch("/api/habits")
 
-    return data
+        const data: Habits = await res.json()
+
+        return data
+
+    } catch (err) {
+        throw new Error("something went wrong trying to GET /api/habits")
+    }
 }
 async function updateHabits(habits: any) {
 
